@@ -10,7 +10,7 @@ variable "datacenter" {
 
 variable "hostname" {
   description = "Hostname of the virtual instance to be deployed"
-  default     = "debian-small"
+  default     = "debian-vm"
 }
 
 variable "cores" {
@@ -35,7 +35,7 @@ variable "domain" {
 }
 
 # Create a new virtual guest using image "Debian"
-resource "ibm_compute_vm_instance" "debian_small_virtual_guest" {
+resource "ibm_compute_vm_instance" "debian_virtual_guest" {
   hostname                 = "${var.hostname}"
   os_reference_code        = "DEBIAN_8_64"
   domain                   = "${var.domain}"
