@@ -15,12 +15,12 @@ variable "hostname" {
 
 variable "cores" {
   description = "Number of cores to add to virtual instance"
-  default     = 1
+  default     = "1"
 }
 
 variable "memory" {
   description = "Memory in KB to add to virtual instance"
-  default     = 1024
+  default     = "1024"
 }
 
 # This will create a new SSH key that will show up under the \
@@ -43,8 +43,8 @@ resource "ibm_compute_vm_instance" "debian_small_virtual_guest" {
   network_speed            = 10
   hourly_billing           = true
   private_network_only     = false
-  cores                    = ${var.cores}
-  memory                   = ${var.memory}
+  cores                    = "${var.cores}"
+  memory                   = "${var.memory}"
   disks                    = [25, 10, 20]
   user_metadata            = "{\"value\":\"newvalue\"}"
   dedicated_acct_host_only = false
