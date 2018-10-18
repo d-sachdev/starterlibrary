@@ -15,6 +15,31 @@
     }
   ],
   "template_input_params": [
+
+    {
+        "default": "1",
+        "description": "Cores to configure in virtual instance",
+        "hidden": false,
+        "immutable": false,
+        "label": "Cores",
+        "name": "cores",
+        "required": true,
+        "secured": false,
+        "type": "string",
+        "group": "virtualmachine"
+    },
+    {
+        "default": "1024",
+        "description": "Memory to configure in virtual instance (KB)",
+        "hidden": false,
+        "immutable": false,
+        "label": "Memory",
+        "name": "memory",
+        "required": true,
+        "secured": false,
+        "type": "string",
+        "group": "virtualmachine"
+    },
     {
         "description": "Public SSH key used to connect to the virtual guest",
         "hidden": false,
@@ -165,7 +190,7 @@
         "group": "virtualmachine"
     },
     {
-        "default": "debian-small",
+        "default": "debian-vm",
         "description": "Hostname of the virtual instance (small flavor) to be deployed",
         "hidden": false,
         "immutable": false,
